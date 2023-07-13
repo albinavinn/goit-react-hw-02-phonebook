@@ -1,0 +1,16 @@
+.contactItem {
+  display: flex;
+  align-items: center;
+}
+
+.deleteButton {
+  width: 80px;
+  margin-left: 15px;
+  font-size: 12px;
+  background-color: #ED4264;
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

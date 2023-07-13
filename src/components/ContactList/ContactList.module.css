@@ -1,0 +1,6 @@
+.contactList4 {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    margin-left: -20px;
+}
