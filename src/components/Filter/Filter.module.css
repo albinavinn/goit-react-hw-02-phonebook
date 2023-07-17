@@ -1,26 +1,14 @@
-.contactLabel {
-  display: flex;
-  flex-direction: column;
-  margin-left: 15px;
-  margin-top: 5px;
-  margin-bottom: 25px;
+.name {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #4a4a4a;
 }
 
-.contactInput {
-  width: 200px;
-  font-size: 16px;
-  padding-left: 8px;
-  background-color: #FFEDBC;
-  margin-top: 5px;
-  border: none;
-  border-radius: 5px;
-}
-
-.contactInput:hover {
-  border: none;
-}
-
-.contactInput:focus {
-  border: none;
-  background-color: #fff;
+.input {
+    display: block;
+    width: 200px;
+    height: 22px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
