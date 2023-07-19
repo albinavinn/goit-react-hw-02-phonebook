@@ -17,24 +17,6 @@ export class App extends Component {
     filter: '',
   };
 
-  
-  componentDidMount() {
-    const contacts = localStorage.getItem('contacts');
-    const parsedContacts = JSON.parse(contacts);
-
-    if (parsedContacts) {
-      this.setState({ contacts: parsedContacts });
-    }
-  };
-
-   componentDidUpdate(prevState) {
-    const nextContacts = this.state.contacts;
-    const prevContacts = prevState.contacts;
-
-    if (nextContacts !== prevContacts) {
-      localStorage.setItem('contacts', JSON.stringify(nextContacts));
-    }
-  };
 
   addContact = event => {
     event.preventDefault();
@@ -63,12 +45,12 @@ export class App extends Component {
     form.reset();
   };
 
-
-
-  deleteContact = (id) => {
-    this.setState((prevState) => ({
-      contacts: prevState.contacts.filter((contact) => contact.id !== id),
-    }));
+    deleteContact = contactId => {
+    this.setState(prevState => {
+      return {
+        contacts: prevState.contacts.filter(({ id }) => id !== contactId),
+      };
+    });
   };
 
   inputFilter = (event) => {
@@ -94,10 +76,11 @@ export class App extends Component {
           {contacts.length > 1 && (
             <Filter value={filter} onChange={this.inputFilter} />
           )}
-          {contacts.length > 0 ?
+          {filterContact.length > 0 ?
             (<ContactList contacts={filterContact} deleteContact={this.deleteContact} />) : (Report.info('Phonebook Info', 'Contact book is empty!',
               'Okay',
             ))}
+          
         </Section>
       </>
     );
